@@ -1,0 +1,43 @@
+{
+  "took": 198,
+  "timed_out": false,
+  "_shards": {
+    "total": 10,
+    "successful": 10,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 2,
+      "relation": "eq"
+    },
+    "max_score": 1.0,
+    "hits": [
+      {
+        "_index": "content",
+        "_type": "_doc",
+        "_id": "QrAj7IgBDS4QTjr7T2Fi",
+        "_score": 1.0,
+        "_source": {
+          "groupName": "Test_GroupName",
+          "pkSeq": "Test_PkSeq",
+          "title": "Test_Title",
+          "jobType": "Test_JobType"
+        }
+      },
+      {
+        "_index": "file",
+        "_type": "_doc",
+        "_id": "Q7Aj7IgBDS4QTjr7T2Fi",
+        "_score": 1.0,
+        "_source": {
+          "fileName": "Test_FileName",
+          "groupName": "Test_GroupName",
+          "pkSeq": "Test_PkSeq",
+          "jobType": "Test_JobType"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "settings": {
+    "index": {
+      "number_of_shards": "5",
+      "number_of_replicas": "1"
+    }
+  },
+  "mappings": {
+    "properties": {
+      "fileName": {
+        "type": "text"
+      },
+      "groupName": {
+        "type": "keyword"
+      },
+      "jobType": {
+        "type": "keyword"
+      },
+      "pkSeq": {
+        "type": "keyword"
+      }
+    }
+  }
+}
