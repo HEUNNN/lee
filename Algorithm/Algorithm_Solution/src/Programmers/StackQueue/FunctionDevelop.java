@@ -5,14 +5,14 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class 기능개발 {
+public class FunctionDevelop {
     public static void main(String[] args) {
         int[] progresses1 = {93, 30, 55};
         int[] speeds1 = {1, 30, 5};
         int[] progresses2 = {95, 90, 99, 99, 80, 99};
         int[] speeds2 = {1, 1, 1, 1, 1, 1};
 
-        int[] answer = new 기능개발().soultion(progresses2, speeds2);
+        int[] answer = new FunctionDevelop().soultion(progresses2, speeds2);
         for (int num : answer) {
             System.out.println(num);
         }

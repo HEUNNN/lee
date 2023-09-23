@@ -2,10 +2,10 @@ package Programmers.heap;
 
 import java.util.*;
 
-public class 이중우선순위큐 {
+public class DoublePriorityQueue {
     public static void main(String[] args) {
         String[] operations = {"I 16", "I -5643", "D -1", "D 1", "D 1", "I 123", "D -1"};
-        new 이중우선순위큐().solution(operations);
+        new DoublePriorityQueue().solution(operations);
     }
 
     public void solution(String[] operations) {

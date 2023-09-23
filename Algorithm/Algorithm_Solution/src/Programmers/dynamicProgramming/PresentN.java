@@ -5,12 +5,12 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class N으로_표현 {
+public class PresentN {
     // https://school.programmers.co.kr/learn/courses/30/lessons/42895
     public static void main(String[] args) {
         int N = 2;
         int number = 11;
-        int solution = new N으로_표현().solution(N, number);
+        int solution = new PresentN().solution(N, number);
         System.out.println(solution);
     }
 

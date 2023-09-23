@@ -3,10 +3,10 @@ package Programmers.sort;
 import java.util.ArrayList;
 import java.util.List;
 
-public class 가장큰수 {
+public class MaximumNumber {
     public static void main(String[] args) {
         int[] numbers = {3, 30, 34, 5, 9};
-        System.out.println(new 가장큰수().solution(numbers));
+        System.out.println(new MaximumNumber().solution(numbers));
     }
     public String solution(int[] numbers) {
         StringBuilder stringBuilder = new StringBuilder();

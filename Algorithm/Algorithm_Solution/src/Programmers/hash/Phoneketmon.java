@@ -2,7 +2,7 @@ package Programmers.hash;
 
 import java.util.HashSet;
 
-public class 폰켓몬 {
+public class Phoneketmon {
     public int getPhonekenmon(int nums[]) {
         int MaxForGet = nums.length / 2;
         HashSet<Integer> hashSet = new HashSet<>();

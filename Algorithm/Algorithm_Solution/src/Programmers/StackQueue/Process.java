@@ -3,11 +3,11 @@ package Programmers.StackQueue;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class 프로세스 {
+public class Process {
     public static void main(String[] args) {
         int[] priorities1 = {2, 1, 3, 2};
         int[] priorities2 = {1, 1, 9, 1, 1, 1};
-        int solution = new 프로세스().solution(priorities1, 3);
+        int solution = new Process().solution(priorities1, 3);
         System.out.println(solution);
     }
 

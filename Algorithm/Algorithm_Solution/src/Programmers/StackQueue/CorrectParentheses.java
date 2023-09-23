@@ -1,8 +1,8 @@
 package Programmers.StackQueue;
 
-public class 올바른괄호 {
+public class CorrectParentheses {
     public static void main(String[] args) {
-        System.out.println(new 올바른괄호().solution("(()("));
+        System.out.println(new CorrectParentheses().solution("(()("));
     }
 
     public boolean solution(String s) {

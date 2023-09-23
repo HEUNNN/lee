@@ -1,13 +1,12 @@
 package Programmers.heap;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
-public class 더_맵게 {
+public class MoreSpicy {
     public static void main(String[] args) {
-        더_맵게 더_맵게 = new 더_맵게();
+        MoreSpicy MoreSpicy = new MoreSpicy();
         int[] arr = {1, 3, 2, 9, 10, 12};
-        int solution = 더_맵게.solution(arr, 7);
+        int solution = MoreSpicy.solution(arr, 7);
         System.out.println(solution);
     }
     public int solution(int[] scoville, int k) {

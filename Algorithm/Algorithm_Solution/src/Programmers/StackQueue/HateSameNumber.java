@@ -1,17 +1,15 @@
 package Programmers.StackQueue;
 
-import java.awt.image.AreaAveragingScaleFilter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
-public class 같은숫자는싫어 {
+public class HateSameNumber {
 
     public static void main(String[] args) {
        int[] arr1 = {1, 1, 3, 3, 0, 1, 1};
        int[] arr2 = {4, 4, 4, 3, 3};
-        int[] answer = new 같은숫자는싫어().solution1(arr2);
+        int[] answer = new HateSameNumber().solution1(arr2);
         for (int i : answer) {
             System.out.println(i);
         }

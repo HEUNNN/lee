@@ -2,7 +2,7 @@ package Programmers.hash;
 
 import java.util.HashMap;
 
-public class 전화번호목록 {
+public class PhoneNumList {
     public boolean isPrefix1(String[] phone_book) {
         HashMap<String, Integer> phoneNumMap = new HashMap<>();
         for(int i = 0; i < phone_book.length; i++) {

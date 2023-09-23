@@ -3,7 +3,7 @@ package Programmers.hash;
 import java.util.HashMap;
 import java.util.Map;
 
-public class 완주하지못한선수 {
+public class DidNotFinishPlayers {
 
     public String getNotCompletePlayer(String[] participant, String[] completion) {
         String notComplete = null;
