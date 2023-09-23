@@ -24,3 +24,4 @@ doc/**/*.pdf
 .DS_Store
 .gradle
 .log
+.idea
