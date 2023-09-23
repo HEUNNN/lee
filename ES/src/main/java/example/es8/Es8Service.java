@@ -14,13 +14,10 @@ import co.elastic.clients.elasticsearch.indices.CreateIndexResponse;
 import co.elastic.clients.elasticsearch.indices.ElasticsearchIndicesClient;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import example.dto.MatchAllResponse;
+import example.es8.dto.MatchAllResponse;
 import example.model.ContentDoc;
 import example.model.FileDoc;
 import lombok.AllArgsConstructor;
-import org.elasticsearch.client.RequestOptions;
-import org.elasticsearch.client.core.CountRequest;
-import org.elasticsearch.search.SearchHit;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
