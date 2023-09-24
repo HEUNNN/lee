@@ -1,8 +1,10 @@
-package Programmers;
+package Programmers.lv1;
 
 import java.util.*;
 
 public class RunningRace {
+
+    // https://school.programmers.co.kr/learn/courses/30/lessons/178871
     public static void main(String[] args) {
         RunningRace runningRace = new RunningRace();
         String[] players = {"mumu", "soe", "poe", "kai", "mine"};
