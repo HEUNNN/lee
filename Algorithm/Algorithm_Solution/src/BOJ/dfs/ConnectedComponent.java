@@ -30,8 +30,8 @@ public class ConnectedComponent {
 
         for (int i = 1; i <= N; i++) {
             if (!visited[i]) {
-//                dfs(nodes, i, visited);
-                bfs(nodes, i, visited);
+                dfs(nodes, i, visited);
+//                bfs(nodes, i, visited);
                 answer++;
             }
         }
