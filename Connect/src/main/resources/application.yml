@@ -1,0 +1,11 @@
+redis:
+  host: localhost
+  port: 6379
+  username: lee
+  password: lee0430
+elasticsearch:
+  host: localhost
+  port: 9200
+  version: 8 # 7 or 8
+
+
