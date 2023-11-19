@@ -38,9 +38,12 @@ class Es8ServiceTest {
 
 
     @Test
-    public void matchAll() throws IOException {
+    public void matchAll() throws IOException, InterruptedException {
         makeBulk();
-        elasticService.matchAllQuery("file");
+//        elasticService.matchAllQuery("content");
+        elasticService.strDateSort("content");
+        System.out.println("==================================");
+        elasticService.dateSort("content");
     }
 
     @Test
@@ -48,17 +51,18 @@ class Es8ServiceTest {
         elasticService.searchAfter("content");
     }
 
-    public void makeBulk() throws IOException {
+    public void makeBulk() throws IOException, InterruptedException {
         List<Object> list = new ArrayList<>();
-        for (int i = 0; i < 1000; i++) {
+        for (int i = 0; i < 10; i++) {
 
             List<Map<String, Object>> fileList = new ArrayList<>();
-            Map<String, Object> map = new HashMap<>();
-            for (int j = 0; j < 2; j++) {
-                map.put("key1", Es8Service.makeFileDocument("appl1", "file", Integer.toString(i), "file" + i));
-                fileList.add(map);
-            }
+//            Map<String, Object> map = new HashMap<>();
+//            for (int j = 0; j < 2; j++) {
+//                map.put("key1", Es8Service.makeFileDocument("appl1", "file", Integer.toString(i), "file" + i));
+//                fileList.add(map);
+//            }
             list.add(Es8Service.makeContentDocument("apple", "content", Integer.toString(i), "title 1", fileList));
+            Thread.sleep(1000 + (i*10));
         }
         elasticService.bulk("content", list);
     }

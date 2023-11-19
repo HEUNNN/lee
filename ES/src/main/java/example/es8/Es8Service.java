@@ -22,6 +22,7 @@ import org.springframework.stereotype.Service;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Service
@@ -30,7 +31,7 @@ public class Es8Service {
 
     private final ElasticsearchClient client;
     private static int max = 1000;
-    private ObjectMapper objectMapper = new ObjectMapper();
+//    private static ObjectMapper objectMapper = new ObjectMapper();
 
     public void createIndex(String indexName) throws IOException {
         ElasticsearchIndicesClient indexClient = client.indices();
@@ -115,6 +116,58 @@ public class Es8Service {
         System.out.println(search.hits().hits().size());
     }
 
+    public void dateSort(String indexName) throws IOException {
+        ObjectMapper objectMapper = new ObjectMapper();
+        SortOptions sortOptions = new SortOptions.Builder()
+                .field(f -> f
+                        .field("date")
+                        .order(SortOrder.Asc))
+                .build();
+        SearchResponse<Object> search = client.search(s -> s
+                        .index(indexName)
+                        .query(q -> q
+                                .matchAll(m -> m))
+                        .sort(sortOptions)
+                        .size(100),
+                Object.class);
+
+        for (Hit<Object> hit : search.hits().hits()) {
+            ContentDoc content = objectMapper.readValue(objectMapper.writeValueAsString(hit.source()), ContentDoc.class);
+
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String dateToSTr = format.format(content.date);
+
+            System.out.println("ID : " + hit.id() + ", pkSeq : " + content.pkSeq + ", Date type: " + dateToSTr + ", str Date : " + content.strDate);
+        }
+    }
+
+    public void strDateSort(String indexName) throws IOException {
+
+        ObjectMapper objectMapper = new ObjectMapper();
+
+        SortOptions sortOptions = new SortOptions.Builder()
+                .field(f -> f
+                        .field("strDate")
+                        .order(SortOrder.Asc))
+                .build();
+        SearchResponse<Object> search = client.search(s -> s
+                        .index(indexName)
+                        .query(q -> q
+                                .matchAll(m -> m))
+                        .sort(sortOptions)
+                        .size(100),
+                Object.class);
+
+        for (Hit<Object> hit : search.hits().hits()) {
+            ContentDoc content = objectMapper.readValue(objectMapper.writeValueAsString(hit.source()), ContentDoc.class);
+
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            String dateToSTr = format.format(content.date);
+
+            System.out.println("ID : " + hit.id() + ", pkSeq : " + content.pkSeq + ", Date type: " + dateToSTr + ", str Date : " + content.strDate);
+        }
+    }
+
     public void searchAfter(String indexName) throws IOException {
 
         List<FieldValue> searchAfter = new ArrayList<>();
@@ -159,6 +212,7 @@ public class Es8Service {
 
         return searchRequest.build();
     }
+
     public Set<String> fileIdsForDel(List<Hit<MatchAllResponse>> hits) throws JsonProcessingException {
         Set<String> fileIds = new HashSet<>();
 
@@ -181,12 +235,17 @@ public class Es8Service {
     }
 
     public static ContentDoc makeContentDocument(String groupName, String jobType, String pkSeq, String title, List<Map<String, Object>> fileList) {
+        Date date = new Date();
+        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        String strDate = format.format(date);
         return ContentDoc.builder()
                          .groupName(groupName)
                          .jobType(jobType)
                          .pkSeq(pkSeq)
                          .title(title)
                          .fileList(fileList)
+                         .strDate(strDate)
+                         .date(date)
                          .build();
     }
 

@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
@@ -27,4 +28,6 @@ public class ContentDoc {
     public String title;
 
     public List<Map<String, Object>> fileList;
+    public String strDate;
+    public Date date;
 }

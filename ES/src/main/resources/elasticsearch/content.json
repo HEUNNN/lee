@@ -18,6 +18,12 @@
       },
       "title": {
         "type": "text"
+      },
+      "strDate": {
+        "type" : "keyword"
+      },
+      "date": {
+        "type": "date"
       }
     }
   }
