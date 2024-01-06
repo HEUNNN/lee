@@ -28,6 +28,7 @@ public class RedisConfig {
         redisConfig.setPassword(password);
         LettuceConnectionFactory lettuceConnectionFactory = new LettuceConnectionFactory(redisConfig);
         lettuceConnectionFactory.setShareNativeConnection(false); // command.select 시 예외가 발생하여 false 로 설정, default 는 ture
+        lettuceConnectionFactory.afterPropertiesSet();
         return lettuceConnectionFactory;
     }
 }
