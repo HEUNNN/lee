@@ -1,0 +1,15 @@
+{
+  "name": "LeeHyeEun",
+  "age": 27,
+  "id": "hye",
+  "item_list": [
+    {
+      "item_name": "apple",
+      "price": 1000
+    },
+    {
+      "item_name": "banana",
+      "price": 1500
+    }
+  ]
+}

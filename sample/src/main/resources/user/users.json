@@ -1,0 +1,36 @@
+[
+  {
+    "name": "LeeHyeEun",
+    "age": 27,
+    "id": "hye",
+    "item_list": [
+      {
+        "item_name": "apple",
+        "price": 1000
+      },
+      {
+        "item_name": "banana",
+        "price": 1500
+      },
+      {
+        "item_name": "strawberry",
+        "price": 3000
+      }
+    ]
+  },
+  {
+    "name": "LeeDongMyeong",
+    "age": 30,
+    "id": "dong",
+    "item_list": [
+      {
+        "item_name": "peach",
+        "price": 5000
+      },
+      {
+        "item_name": "strawberry",
+        "price": 3000
+      }
+    ]
+  }
+]
