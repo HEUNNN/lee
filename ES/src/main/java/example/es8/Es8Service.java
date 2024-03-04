@@ -184,7 +184,7 @@ public class Es8Service {
                 break;
             }
 
-            if (hits.size() > 0) { // 다음 페이지 검색을 위해 마지막 문서 정보 저장
+            if (!hits.isEmpty()) { // 다음 페이지 검색을 위해 마지막 문서 정보 저장
                 Hit<MatchAllResponse> last = hits.get(hits.size() - 1);
                 searchAfter = last.sort();
             }
