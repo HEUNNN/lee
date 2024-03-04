@@ -1,0 +1,13 @@
+redis:
+  host: 127.0.0.1
+  port: 6379
+  username: lee
+  password: lee0430
+elasticsearch:
+  url: localhost
+  port: 9200
+spring:
+  datasource:
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
