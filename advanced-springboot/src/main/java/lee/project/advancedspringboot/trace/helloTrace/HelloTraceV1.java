@@ -12,11 +12,11 @@ public class HelloTraceV1 {
     private static final String COMPLETE_PREFIX = "<--";
     private static final String EX_PREFIX = "<X-";
 
-    public TraceStatus begin(String menssage) {
+    public TraceStatus begin(String message) {
         TraceId traceId = new TraceId();
         long startTimeMs = System.currentTimeMillis();
-        log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX, traceId.getLevel()), menssage);
-        return new TraceStatus(traceId, startTimeMs, menssage);
+        log.info("[{}] {}{}", traceId.getId(), addSpace(START_PREFIX, traceId.getLevel()), message);
+        return new TraceStatus(traceId, startTimeMs, message);
     }
 
     public void end(TraceStatus status) {
